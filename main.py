@@ -1,4 +1,4 @@
--1# python3
+# python3
 from collections import namedtuple
 
 Bracket = namedtuple("Bracket", ["char", "position"])
@@ -20,9 +20,9 @@ def find_mismatch(text):
         if next in ")]}":
             # Process closing bracket, write your code here
             pass
-            if not opening_brackets_stack or not are_matching(opening_brackets_stack[-1].char,next):
+            if not opening_brackets_stack or not are_matching(opening_brackets_stack.pop().char,next):
                 return i+1
-    opening_brackets_stack.pop()       
+           
     if opening_brackets_stack:
         return opening_brackets_stack[0].position
     return"success"
@@ -42,7 +42,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
